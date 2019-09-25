@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">test</string>
+
+    <!-- todo 多次複用-->
+    <string name="text_good">testGood讚讚!</string>
+    <color name="color_good22">#FFEB3B</color>
+    <string name="title_activity_main3">Main3Activity</string>
+
+</resources>
