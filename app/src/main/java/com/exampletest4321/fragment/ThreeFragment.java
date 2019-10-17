@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.exampletest4321.R;
 
@@ -62,7 +63,12 @@ public class ThreeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_three, container, false);
+        View view = inflater.inflate(R.layout.fragment_three, container, false);
+
+        TextView textView = view.findViewById(R.id.textView);
+        textView.setText(mParam2);
+
+        return view;
     }
 
 }
