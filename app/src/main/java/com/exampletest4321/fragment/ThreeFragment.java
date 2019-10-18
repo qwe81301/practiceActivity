@@ -67,7 +67,7 @@ public class ThreeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_three, container, false);
 
         TextView textView = view.findViewById(R.id.textView);
-        textView.setText(mParam2);
+//        textView.setText(mParam2);
 
         return view;
     }
@@ -75,6 +75,6 @@ public class ThreeFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        Log.v("mParam2------------",mParam2);
+//        Log.v("mParam2------------",mParam2);
     }
 }

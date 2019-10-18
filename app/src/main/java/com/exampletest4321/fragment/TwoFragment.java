@@ -85,17 +85,22 @@ public class TwoFragment extends Fragment {
         mJumpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (threeFragment ==null){
-                    threeFragment = ThreeFragment.newInstance("","");
+                if (threeFragment == null) {
+//                    threeFragment = ThreeFragment.newInstance("", "");
+                    threeFragment = new ThreeFragment();
                 }
                 //(演示 1)todo 一般跳轉
 //                getFragmentManager().beginTransaction().replace(R.id.constraintLayout,threeFragment).commitAllowingStateLoss();
 
-                //(演示 2)todo 堆疊返回(回退棧) 按返回鍵能退回 上一個fragment
-                getFragmentManager().beginTransaction().replace(R.id.constraintLayout,threeFragment).addToBackStack(null).commitAllowingStateLoss();
+                //(演示 2)todo 堆疊返回(回退棧) 按返回鍵能退回 上一個fragment (但退回後 資料會刷新)
+//                getFragmentManager().beginTransaction().replace(R.id.constraintLayout,threeFragment).addToBackStack(null).commitAllowingStateLoss();
 
                 //(演示 3)todo 堆疊返回(回退棧) 按返回鍵能退回 後資料保存
-//                getFragmentManager().beginTransaction().replace(R.id.constraintLayout,threeFragment).addToBackStack(null).commitAllowingStateLoss();
+
+                Fragment fragment = getFragmentManager().findFragmentByTag("two");
+
+                getFragmentManager().beginTransaction().add(R.id.constraintLayout, threeFragment).hide(fragment).addToBackStack(null).commitAllowingStateLoss();
+
 
                 // todo 試過 但不能用?
 //                Fragment f = getFragmentManager().findFragmentByTag("2");
@@ -109,7 +114,7 @@ public class TwoFragment extends Fragment {
 
         mTextView = view.findViewById(R.id.textView4);
 
-        mChangeTextButton =view.findViewById(R.id.button7);
+        mChangeTextButton = view.findViewById(R.id.button7);
         mChangeTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
