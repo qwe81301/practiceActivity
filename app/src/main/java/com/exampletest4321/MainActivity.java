@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     //(3) logcat功能(AS下方工具欄)
 
     //todo(4) GSON
-    DataBean dataBean;
+    DataBean3 dataBean;
 
 
     @Override
@@ -113,29 +113,149 @@ public class MainActivity extends AppCompatActivity {
         //假設回傳拿到 json 字串 responseStr  json 字串
         String responseStr = "{\n" +
                 "   \"rid\":1,\n" +
-                "   \"sNo\":1,\n" +
-                "\"hours\":5.9,\n" +
-                "   \"string\":\"srt111\"\n" +
+                "   \"sDate\":\"2020\\/07\\/30\",\n" +
+                "   \"eDate\":\"2020\\/08\\/03\",\n" +
+                "   \"date\":{\n" +
+                "      \"2020\\/07\\/30\":{\n" +
+                "         \"myScj\":{\n" +
+                "            \"ctm27\":[\n" +
+                "               {\n" +
+                "                  \"cName\":\"APP測試石\",\n" +
+                "                  \"sNo\":3438\n" +
+                "               },\n" +
+                "               {\n" +
+                "                  \"cName\":\"APP測試蕉\",\n" +
+                "                  \"sNo\":3435\n" +
+                "               }\n" +
+                "            ]\n" +
+                "         },\n" +
+                "         \"other\":{\n" +
+                "            \"leave\":[\n" +
+                "               {\n" +
+                "                  \"cName\":\"石晉宇A\",\n" +
+                "                  \"sNo\":3211\n" +
+                "               }\n" +
+                "            ]\n" +
+                "         }\n" +
+                "      },\n" +
+                "      \"2020\\/07\\/31\":{\n" +
+                "         \"myScj\":{\n" +
+                "\n" +
+                "         },\n" +
+                "         \"other\":{\n" +
+                "\n" +
+                "         }\n" +
+                "      },\n" +
+                "      \"2020\\/08\\/01\":{\n" +
+                "         \"myScj\":{\n" +
+                "\n" +
+                "         },\n" +
+                "         \"other\":{\n" +
+                "            \"leave\":[\n" +
+                "               {\n" +
+                "                  \"cName\":\"石晉宇A\",\n" +
+                "                  \"sNo\":3211\n" +
+                "               }\n" +
+                "            ]\n" +
+                "         }\n" +
+                "      },\n" +
+                "      \"2020\\/08\\/02\":{\n" +
+                "         \"myScj\":{\n" +
+                "            \"ck44\":[\n" +
+                "               {\n" +
+                "                  \"cName\":\"APP測試石\",\n" +
+                "                  \"sNo\":3438\n" +
+                "               }\n" +
+                "            ]\n" +
+                "         },\n" +
+                "         \"other\":{\n" +
+                "            \"ck7\":[\n" +
+                "               {\n" +
+                "                  \"cName\":\"APP測試豪\",\n" +
+                "                  \"sNo\":3437\n" +
+                "               },\n" +
+                "               {\n" +
+                "                  \"cName\":\"APP測試蕉\",\n" +
+                "                  \"sNo\":3435\n" +
+                "               }\n" +
+                "            ],\n" +
+                "            \"leave\":[\n" +
+                "               {\n" +
+                "                  \"cName\":\"石晉宇A\",\n" +
+                "                  \"sNo\":3211\n" +
+                "               }\n" +
+                "            ]\n" +
+                "         }\n" +
+                "      },\n" +
+                "      \"2020\\/08\\/03\":{\n" +
+                "         \"myScj\":{\n" +
+                "            \"ck7\":[\n" +
+                "               {\n" +
+                "                  \"cName\":\"APP測試石\",\n" +
+                "                  \"sNo\":3438\n" +
+                "               }\n" +
+                "            ]\n" +
+                "         },\n" +
+                "         \"other\":{\n" +
+                "            \"ck44\":[\n" +
+                "               {\n" +
+                "                  \"cName\":\"APP測試蕉\",\n" +
+                "                  \"sNo\":3435\n" +
+                "               }\n" +
+                "            ]\n" +
+                "         }\n" +
+                "      }\n" +
+                "   },\n" +
+                "   \"classList\":{\n" +
+                "      \"ck44\":{\n" +
+                "         \"color\":\"#3278f0\",\n" +
+                "         \"data\":\"【08:30~12:00】+【18:06~次日03:30】+【次日05:00~次日06:00】,【12:00~13:30】+【次日04:00~次日04:30】,13小時54分鐘\",\n" +
+                "         \"name\":\"APP_班別_次日_\"\n" +
+                "      },\n" +
+                "      \"ck7\":{\n" +
+                "         \"color\":\"#4c7fb9\",\n" +
+                "         \"data\":\"【09:00~12:00】+【14:00~16:00】+【17:00~18:00】,無,6小時\",\n" +
+                "         \"name\":\"變動三段\"\n" +
+                "      },\n" +
+                "      \"ctm22\":{\n" +
+                "         \"color\":\"#5cab7d\",\n" +
+                "         \"data\":\"【00:00~01:00】,無,1小時\",\n" +
+                "         \"name\":\"5222\"\n" +
+                "      },\n" +
+                "      \"ctm27\":{\n" +
+                "         \"color\":\"#5cab7d\",\n" +
+                "         \"data\":\"【00:01~00:02】,無,0小時1分鐘\",\n" +
+                "         \"name\":\"5999自訂\"\n" +
+                "      },\n" +
+                "      \"leave\":{\n" +
+                "         \"color\":\"#f2807c\",\n" +
+                "         \"data\":\"\",\n" +
+                "         \"name\":\"休假\"\n" +
+                "      }\n" +
+                "   },\n" +
+                "   \"name\":\"APP TEST 03\",\n" +
+                "   \"intro\":\"TEST APP for 排班123TEST APP for 排班123TEST APP for 排\"\n" +
                 "}";
 
         Gson gson = new Gson();
 
-        dataBean = gson.fromJson(responseStr, DataBean.class);
+        dataBean = gson.fromJson(responseStr, DataBean3.class);
 
-        switch (dataBean.getRid()) {
-            case 1:
-                Log.v(TAG_LOG, "成功");
-                // 成功後要執行甚麼方法...
-
-                // debug 中斷模式  在裡面一層的參數  EX: 5.2  做切割  [0] [1]都能直接看值是多少
-                String str = String.valueOf(dataBean.getHours()).split("\\.")[0];
-                Log.v(TAG_LOG, "str:" + str);
-
-                break;
-            case -1:
-                Log.v(TAG_LOG, "失敗");
-                break;
-        }
+        Log.v("TAG","");
+//        switch (dataBean.getRid()) {
+//            case 1:
+//                Log.v(TAG_LOG, "成功");
+//                // 成功後要執行甚麼方法...
+//
+//                // debug 中斷模式  在裡面一層的參數  EX: 5.2  做切割  [0] [1]都能直接看值是多少
+//                String str = String.valueOf(dataBean.getHours()).split("\\.")[0];
+//                Log.v(TAG_LOG, "str:" + str);
+//
+//                break;
+//            case -1:
+//                Log.v(TAG_LOG, "失敗");
+//                break;
+//        }
 
 
         mButton.setOnClickListener(new View.OnClickListener() {
