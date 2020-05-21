@@ -3,6 +3,8 @@ package com.exampletest4321;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -11,6 +13,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -50,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     //todo(4) GSON
     DataBean3 dataBean;
 
+    private ConstraintLayout mOuterConstraintLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Log.v(TAG_LOG, "onCreate" + BuildConfig.VERSION_NAME);
+
+        mOuterConstraintLayout = findViewById(R.id.constraintLayout2);
+        mOuterConstraintLayout.setBackgroundResource(R.drawable.outer_ring);
 
         // findViewById UI  要比使用元件還早 (要不然會報錯)
         mSwitch = findViewById(R.id.switch123);
@@ -99,11 +106,19 @@ public class MainActivity extends AppCompatActivity {
                 Log.v(TAG_LOG, "test show log(mSwitch onCheckedChanged)");
 
                 //todo() 判斷 當下isChecked 來做反應
+                mOuterConstraintLayout.setBackgroundResource(R.drawable.outer_ring);
                 if (isChecked) {
                     //todo() 呼叫其他方法
                     testFunc("open");
+
+                    GradientDrawable drawable = (GradientDrawable) mOuterConstraintLayout.getBackground();
+                    drawable.setColor(ContextCompat.getColor(getApplicationContext(), R.color.colorAccent));
+//                    mOuterConstraintLayout.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorAccent));
                 } else {
                     testFunc("close");
+                    GradientDrawable drawable = (GradientDrawable) mOuterConstraintLayout.getBackground();
+                    drawable.setColor(ContextCompat.getColor(getApplicationContext(), R.color.color_good));
+//                    mOuterConstraintLayout.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.color_good));
                 }
             }
         });
