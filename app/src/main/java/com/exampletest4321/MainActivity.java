@@ -104,23 +104,23 @@ public class MainActivity extends AppCompatActivity {
 
                 //todo() 判斷 當下isChecked 來做反應
 
-                GradientDrawable Tdrawable = (GradientDrawable) mDateTextView.getBackground();
+                GradientDrawable TextViewDrawable = (GradientDrawable) mDateTextView.getBackground();
 
                 if (isChecked) {
                     //todo() 呼叫其他方法
                     testFunc("open");
 
-                    Tdrawable.setShape(GradientDrawable.OVAL);
-                    Tdrawable.setColor(ContextCompat.getColor(getApplicationContext(), R.color.colorAccent));
-                    Tdrawable.setStroke(5,ContextCompat.getColor(getApplicationContext(), R.color.colorAccent));
+                    TextViewDrawable.setShape(GradientDrawable.OVAL);
+                    TextViewDrawable.setColor(ContextCompat.getColor(getApplicationContext(), R.color.colorAccent));
+                    TextViewDrawable.setStroke(5,ContextCompat.getColor(getApplicationContext(), R.color.colorAccent));
                     mDateTextView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
 
                 } else {
                     testFunc("close");
 
-                    Tdrawable.setShape(GradientDrawable.OVAL);
-                    Tdrawable.setColor(ContextCompat.getColor(getApplicationContext(), R.color.transparent));
-                    Tdrawable.setStroke(5,ContextCompat.getColor(getApplicationContext(), R.color.colorAccent));
+                    TextViewDrawable.setShape(GradientDrawable.OVAL);
+                    TextViewDrawable.setColor(ContextCompat.getColor(getApplicationContext(), R.color.transparent));
+                    TextViewDrawable.setStroke(5,ContextCompat.getColor(getApplicationContext(), R.color.colorAccent));
 
                     mDateTextView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
                 }

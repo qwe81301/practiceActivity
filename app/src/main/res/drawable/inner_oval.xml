@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="oval"
-    >
-    <!--1. -->
+    android:shape="oval">
+    <!-- 要用到 GradientDrawable 的元件 一定要在xml先加上background屬性
+    並設置drawable的隨意一個檔案
+    要不然 getBackground時不是drawable的會出錯
+    EX: <TextView
+            android:id="@+id/textView_date"
+            ..
+            android:background="@drawable/inner_oval"-->
+
     <solid
         android:color="@android:color/transparent">
     </solid>
 
-        <stroke
-            android:color="@android:color/black"
-            android:width="3dp">
-        </stroke>
+    <stroke
+        android:width="3dp"
+        android:color="@android:color/black">
+    </stroke>
 
     <!--要改動其他參數可以再查 舉例 corners -->
     <!--    <corners-->
