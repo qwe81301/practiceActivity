@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval"
+    >
+    <!--1. -->
+    <solid
+        android:color="@android:color/transparent">
+    </solid>
+
+        <stroke
+            android:color="@android:color/black"
+            android:width="3dp">
+        </stroke>
+
+    <!--要改動其他參數可以再查 舉例 corners -->
+    <!--    <corners-->
+    <!--        android:radius="2dp">-->
+    <!--    </corners>-->
+
+</shape>
