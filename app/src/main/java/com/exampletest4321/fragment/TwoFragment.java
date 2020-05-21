@@ -30,6 +30,8 @@ public class TwoFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private String mString;
+
     private Button mJumpButton;
     private Button mChangeTextButton;
 
@@ -66,6 +68,8 @@ public class TwoFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+            mString = getArguments().getString("TestName");
         }
     }
 
@@ -73,7 +77,8 @@ public class TwoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_two, container, false);
+        View view = inflater.inflate(R.layout.fragment_two, container, false);
+        return view;
     }
 
     @Override
@@ -93,13 +98,15 @@ public class TwoFragment extends Fragment {
 //                getFragmentManager().beginTransaction().replace(R.id.constraintLayout,threeFragment).commitAllowingStateLoss();
 
                 //(演示 2)todo 堆疊返回(回退棧) 按返回鍵能退回 上一個fragment (但退回後 資料會刷新)
-//                getFragmentManager().beginTransaction().replace(R.id.constraintLayout,threeFragment).addToBackStack(null).commitAllowingStateLoss();
+                getFragmentManager().beginTransaction().replace(R.id.constraintLayout,threeFragment).addToBackStack(null).commitAllowingStateLoss();
 
                 //(演示 3)todo 堆疊返回(回退棧) 按返回鍵能退回 後資料保存
 
-                Fragment fragment = getFragmentManager().findFragmentByTag("two");
+//                Fragment fragment = getFragmentManager().findFragmentByTag("two");
+//                getFragmentManager().beginTransaction().add(R.id.constraintLayout, threeFragment).hide(fragment).addToBackStack(null).commitAllowingStateLoss();
 
-                getFragmentManager().beginTransaction().add(R.id.constraintLayout, threeFragment).hide(fragment).addToBackStack(null).commitAllowingStateLoss();
+
+//                getFragmentManager().beginTransaction().add(R.id.constraintLayout, threeFragment).hide(TwoFragment.this).addToBackStack(null).commitAllowingStateLoss();
 
 
                 // todo 試過 但不能用?
@@ -118,7 +125,7 @@ public class TwoFragment extends Fragment {
         mChangeTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mTextView.setText("OOOXXX");
+                mTextView.setText(mString);
             }
         });
 

@@ -5,20 +5,18 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.exampletest4321.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ThreeFragment#newInstance} factory method to
+ * Use the {@link FiveFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ThreeFragment extends Fragment {
+public class FiveFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,7 +27,7 @@ public class ThreeFragment extends Fragment {
     private String mParam2;
 
 
-    public ThreeFragment() {
+    public FiveFragment() {
         // Required empty public constructor
     }
 
@@ -39,11 +37,11 @@ public class ThreeFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ThreeFragment.
+     * @return A new instance of fragment FiveFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ThreeFragment newInstance(String param1, String param2) {
-        ThreeFragment fragment = new ThreeFragment();
+    public static FiveFragment newInstance(String param1, String param2) {
+        FiveFragment fragment = new FiveFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,19 +62,12 @@ public class ThreeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_three, container, false);
-
-//        TextView textView = view.findViewById(R.id.textView);
-//        textView.setText(mParam2);
-
-        //getFragmentManager().popBackStack();
-
-        return view;
+        return inflater.inflate(R.layout.fragment_five, container, false);
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-//        Log.v("mParam2------------",mParam2);
+    public void onStart() {
+        super.onStart();
+
     }
 }

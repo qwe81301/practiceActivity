@@ -20,9 +20,19 @@ public class Main10Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main10);
 
 //        oneFragment = new OneFragment();
-        twoFragment = TwoFragment.newInstance("","TEST_2");
+//        (dem 1)
+        twoFragment = TwoFragment.newInstance("", "bear1");
 
-        getSupportFragmentManager().beginTransaction().add(R.id.constraintLayout, twoFragment,"two").commitAllowingStateLoss();
+        //(dem 2)
+//        twoFragment = new TwoFragment();
+//
+//        Bundle bundle = new Bundle();
+//        bundle.putString("TestName", "bear2");
+////        bundle.putInt();
+//        twoFragment.setArguments(bundle);
+
+        getSupportFragmentManager().beginTransaction().add(R.id.constraintLayout, twoFragment, "two").addToBackStack(null)
+                .commitAllowingStateLoss();
 
     }
 }

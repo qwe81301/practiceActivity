@@ -1,26 +1,30 @@
 package com.exampletest4321;
 
+import java.util.List;
+
 /**
  * author:       bearshih
  * project:      test
  * date:         2019/8/28
  * version:
  * description:
+ * EX:
+ * {"color":"str"}
  */
 public class DataBean {
 
 
     /**
      * rid : 1
-     * sNo : 1
-     * hours : 5.9
-     * string : srt111
+     * sDate : 2020/07/30
+     * eDate : 2020/08/03
+     * date : {"realDate":{"myScj":{"ctm27":[{"cName":"APP測試石","sNo":3438},{"cName":"APP測試蕉","sNo":3435}]},"other":{"ck7":[{"cName":"APP測試蕉","sNo":3435}],"leave":[{"cName":"石晉宇A","sNo":3211}]}}}
      */
 
     private int rid;
-    private int sNo;
-    private double hours;
-    private String string;
+    private String sDate;
+    private String eDate;
+    private DateBean date;
 
     public int getRid() {
         return rid;
@@ -30,27 +34,47 @@ public class DataBean {
         this.rid = rid;
     }
 
-    public int getSNo() {
-        return sNo;
+    public String getSDate() {
+        return sDate;
     }
 
-    public void setSNo(int sNo) {
-        this.sNo = sNo;
+    public void setSDate(String sDate) {
+        this.sDate = sDate;
     }
 
-    public double getHours() {
-        return hours;
+    public String getEDate() {
+        return eDate;
     }
 
-    public void setHours(double hours) {
-        this.hours = hours;
+    public void setEDate(String eDate) {
+        this.eDate = eDate;
     }
 
-    public String getString() {
-        return string;
+    public DateBean getDate() {
+        return date;
     }
 
-    public void setString(String string) {
-        this.string = string;
+    public void setDate(DateBean date) {
+        this.date = date;
+    }
+
+    public static class DateBean {
+        /**
+         * realDate : {"myScj":{"ctm27":[{"cName":"APP測試石","sNo":3438},{"cName":"APP測試蕉","sNo":3435}]},"other":{"ck7":[{"cName":"APP測試蕉","sNo":3435}],"leave":[{"cName":"石晉宇A","sNo":3211}]}}
+         */
+
+        private RealDateBean realDate;
+
+        public RealDateBean getRealDate() {
+            return realDate;
+        }
+
+        public void setRealDate(RealDateBean realDate) {
+            this.realDate = realDate;
+        }
+
+        public static class RealDateBean {
+
+        }
     }
 }

@@ -17,4 +17,14 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="AppTheme.NoActionBar.PopupOverlay"
+        parent="ThemeOverlay.AppCompat.Light"/>
+
+    <!--測試-->
+    <style name="Toolbar_TextAppearance_Black" >
+        <item name="android:textSize">50sp</item>
+        <!--        <item name="android:textColor">@color/aqua水色</item>-->
+        <!--        <item name="android:gravity">center</item>-->
+    </style>
+
 </resources>
