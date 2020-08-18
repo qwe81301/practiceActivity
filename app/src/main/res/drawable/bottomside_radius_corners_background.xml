@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 留三邊 這裡只把 左邊參數改成-2dp(這裡"-2"是要比 設定寬度 要還要多-1) 剩下三邊正常顯示  -->
+    <item android:top="-2dp">
+        <shape>
+            <stroke
+                android:width="0.5dp"
+                android:color="@color/transparent" />
+
+            <!--半邊圓角 corners -->
+            <corners
+                android:bottomLeftRadius="@dimen/medium_radius_corners"
+                android:bottomRightRadius="@dimen/medium_radius_corners"
+                android:topLeftRadius="0dp"
+                android:topRightRadius="0dp">
+            </corners>
+        </shape>
+    </item>
+
+</layer-list>

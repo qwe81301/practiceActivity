@@ -7,4 +7,16 @@
     <color name="white">#FFFFFF</color>
     <color name="transparent">#00000000</color>
     <color name="black">#000000</color>
+
+
+    <!--從 red_4 開始就按新增排序號 不再照顏色深淺排序了   -->
+    <!--(100,250,115,127) red_4(iOS同步色)   -->
+    <color name="red_4">#FA737F</color>
+
+    <!--(100,255,171,171) red_5(iOS同步色)   -->
+    <color name="red_5">#FFABAB</color>
+
+    <color name="attendance_overview_statistics_title_red">@color/red_4</color>
+    <color name="attendance_overview_statistics_value_red">@color/red_5</color>
+
 </resources>

@@ -1,3 +1,9 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+
+    <!-- 圓角程度 -->
+    <!-- 圓角程度(小) -->
+    <dimen name="small_radius_corners">2dp</dimen>
+    <!-- 圓角程度(中) -->
+    <dimen name="medium_radius_corners">30dp</dimen>
 </resources>
