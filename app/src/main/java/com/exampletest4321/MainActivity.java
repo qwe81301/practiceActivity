@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.v(TAG_LOG, "onCreate" + BuildConfig.VERSION_NAME);
 
-        mDateTextView =  findViewById(R.id.textView_date);
+        mDateTextView = findViewById(R.id.textView_date);
 
         // findViewById UI  要比使用元件還早 (要不然會報錯)
         mSwitch = findViewById(R.id.switch123);
@@ -76,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
+
+
+
             }
         });
 
@@ -88,8 +91,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Log.v(TAG_LOG, "IMEI: " + imei);
                 Log.v(TAG_LOG, "BuildConfig: " + BuildConfig.VERSION_NAME);
-
-
 
 
             }
@@ -112,15 +113,24 @@ public class MainActivity extends AppCompatActivity {
 
                     TextViewDrawable.setShape(GradientDrawable.OVAL);
                     TextViewDrawable.setColor(ContextCompat.getColor(getApplicationContext(), R.color.colorAccent));
-                    TextViewDrawable.setStroke(5,ContextCompat.getColor(getApplicationContext(), R.color.colorAccent));
+                    TextViewDrawable.setStroke(5, ContextCompat.getColor(getApplicationContext(), R.color.colorAccent));
                     mDateTextView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+
+                    int a, b;
+                    a = 10;
+
+                    b = a;
+
+                    b = b - 1;
+
+                    mTextView.setText(String.valueOf(a));
 
                 } else {
                     testFunc("close");
 
                     TextViewDrawable.setShape(GradientDrawable.OVAL);
                     TextViewDrawable.setColor(ContextCompat.getColor(getApplicationContext(), R.color.transparent));
-                    TextViewDrawable.setStroke(5,ContextCompat.getColor(getApplicationContext(), R.color.colorAccent));
+                    TextViewDrawable.setStroke(5, ContextCompat.getColor(getApplicationContext(), R.color.colorAccent));
 
                     mDateTextView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
                 }
@@ -260,7 +270,7 @@ public class MainActivity extends AppCompatActivity {
 
         dataBean = gson.fromJson(responseStr, DataBean3.class);
 
-        Log.v("TAG","");
+        Log.v("TAG", "");
 //        switch (dataBean.getRid()) {
 //            case 1:
 //                Log.v(TAG_LOG, "成功");
@@ -280,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Main4Activity.class);
+//                Intent intent = new Intent(MainActivity.this, Main4Activity.class);
 
 //                String str = mEditText.getText().toString();
 //                double number = Double.parseDouble(str);
@@ -288,9 +298,12 @@ public class MainActivity extends AppCompatActivity {
 //                intent.putExtra("name", "testName");// key value 形式
 //                intent.putExtra("hours", number);// key value 形式
 
-                Person person = new Person("persName", 20);
+//                Person person = new Person("persName", 20);
+//
+//                intent.putExtra("person", person);
 
-                intent.putExtra("person", person);
+
+
 
                 //double d= Double.parseDouble(yourString);
 
@@ -300,7 +313,7 @@ public class MainActivity extends AppCompatActivity {
 //                finish();
 
 
-                startActivityForResult(intent,  33);//需要自訂一個 requestCode
+//                startActivityForResult(intent,  33);//需要自訂一個 requestCode
 
 
             }
@@ -328,8 +341,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == 33 && resultCode == 44)
-        {
+        if (requestCode == 33 && resultCode == 44) {
             String result_value = data.getStringExtra("testsetResult");
             mTextView.setText("已成功回傳");
 

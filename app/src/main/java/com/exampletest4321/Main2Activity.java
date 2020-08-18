@@ -36,23 +36,23 @@ public class Main2Activity extends AppCompatActivity {
 //        mTextView.setText("person name:"+person.getName()+" person age:"+person.getAge());
 
 
-        findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //送出廣播
-//                Intent intent = new Intent("test_Broadcast"); //設定廣播識別碼
-//                intent.putExtra("testValue", "OK 收到廣播");
-//                sendBroadcast(intent); //發送廣播訊息
-
-                /*
-                 * 调用setResult方法表示我将Intent对象返回给之前的那个Activity，这样就可以在onActivityResult方法中得到Intent对象，
-                 */
-                Intent intent2 = new Intent(); //設定廣播識別碼
-                intent2.putExtra("testsetResult", "TEST setResult");
-                setResult(44, intent2);//需要自訂一個 resultCode
-                finish();//(這邊一定要在加上 finish() )  todo finish() 方法是關閉這個activity
-            }
-        });
+//        findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //送出廣播
+////                Intent intent = new Intent("test_Broadcast"); //設定廣播識別碼
+////                intent.putExtra("testValue", "OK 收到廣播");
+////                sendBroadcast(intent); //發送廣播訊息
+//
+//                /*
+//                 * 调用setResult方法表示我将Intent对象返回给之前的那个Activity，这样就可以在onActivityResult方法中得到Intent对象，
+//                 */
+//                Intent intent2 = new Intent(); //設定廣播識別碼
+//                intent2.putExtra("testsetResult", "TEST setResult");
+//                setResult(44, intent2);//需要自訂一個 resultCode
+//                finish();//(這邊一定要在加上 finish() )  todo finish() 方法是關閉這個activity
+//            }
+//        });
 
 
 
