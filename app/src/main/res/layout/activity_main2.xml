@@ -67,13 +67,13 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout_late_statistics_value_min"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/constraintLayout_late_statistics_value_count"
-                    app:layout_constraintHorizontal_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout_late_statistics_value_count"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_weight="2">
 
                     <TextView
                         android:id="@+id/textView_late_statistics_value_min_value"
@@ -105,14 +105,14 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout_view_outer_late_statistics"
-                    android:layout_width="3dp"
-                    android:layout_height="0dp"
-                    android:background="@color/black"
-                    android:rotation="30"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/constraintLayout_late_statistics_value_count"
-                    app:layout_constraintStart_toEndOf="@+id/constraintLayout_late_statistics_value_min"
-                    app:layout_constraintTop_toTopOf="parent">
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@color/transparent"
+                    android:rotation="135"
+                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout_late_statistics_value_count"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout_late_statistics_value_min">
 
                     <View
                         android:id="@+id/view_separate_top"
@@ -151,13 +151,13 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout_late_statistics_value_count"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_weight="1"
-                    app:layout_constraintStart_toEndOf="@+id/constraintLayout_late_statistics_value_min"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout_late_statistics_value_min"
+                    app:layout_constraintVertical_weight="1">
 
 
                     <TextView
@@ -175,7 +175,6 @@
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

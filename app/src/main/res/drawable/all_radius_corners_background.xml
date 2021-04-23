@@ -11,7 +11,7 @@
 
     <!--要改動其他參數可以再查 舉例 corners -->
     <corners
-    android:radius="@dimen/medium_radius_corners">
+        android:radius="@dimen/medium_radius_corners">
     </corners>
 
 </shape>
